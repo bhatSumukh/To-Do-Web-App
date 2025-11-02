@@ -1,35 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>To-Do App</title>
 
-    <title>To-Do App</title>
+  <link rel="stylesheet" href="styles.css" />
+  
+  <link 
+    rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" 
+  />
 </head>
-<body>
-        
-    <h1>Your To Do</h1>
-       
-<div class="addTask">
-    <form action="">
-    <input type="text" id="task" name="task" placeholder="Add your new task">
- </form>
-        <button id="add"
-        onclick="
-        add();
-        "
-        ><i class="fa-solid fa-plus"></i></button>
-    </div>
-<div class="list">
-        <ul id="tasks"></ul>
-    </div>
-    <div class="clearer">
-<button id="clear" style="display: none;">Clear Completed Tasks</button>
-</div>
 
-    <script src="script.js"></script>
+<body>
+  <div class="to-do-container">  
+    <h1>Your To Do</h1>
+
+    <div class="addTask">
+      <form action="">
+        <input 
+          type="text" 
+          id="task" 
+          name="task" 
+          placeholder="Add your new task" 
+        />
+      </form>
+
+      <button 
+        id="add"
+        onclick="add();"
+      >
+        <i class="fa-solid fa-plus"></i>
+      </button>
+    </div>
+
+    <div class="list">
+      <ul id="tasks"></ul>
+    </div>
+
+    <div class="clearer">
+      <button id="clear" style="display: none;">
+        Clear Completed Tasks
+      </button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
-
