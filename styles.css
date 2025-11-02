@@ -1,12 +1,100 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+h1{
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.addTask{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
 
+.addTask input{
+    border: none;
+    outline: none;
+    border-bottom: 1px solid black;
+}
+
+#addTask input:focus{
+    outline: none;
+    border: none;
+    box-shadow: none;
+}
+
+#add{
+    background-color: black;
+    color: white;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+}
+#add i{
+    color: white;
+}
 ul{
    padding: 0;
     list-style-type: none;
+    align-items: center;
 }
 li {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 8px;
+    margin-top:20px;
     margin-bottom: 8px;
 }
-    
+.list-inside{
+    border-bottom: 1px solid black;
+    width: 120px;
+}
+.dlt{
+    color: white;
+    background-color: black;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+}
+
+.dlt:hover{
+    background-color: white;
+    color:black;
+    transition: 0.5s;
+}
+
+input[type="checkbox"]{
+    accent-color: black;
+}
+
+#add:hover{
+    background-color: white;
+    transition: 0.2s;
+}
+#add i:hover{
+    color:black;
+    transition: 0.2s;
+}
+.clearer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+}
+#clear{
+     background-color: black;
+     color: white;
+     height: 30px;
+     width: 170px;
+     border-radius: 20px;
+}
+#clear:hover{
+    background-color: white;
+    color:black;
+    transition: 0.5s;
+}

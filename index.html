@@ -4,27 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
     <title>To-Do App</title>
 </head>
 <body>
-    <h1>To-Do App</h1>
-
+        
+    <h1>Your To Do</h1>
+       
+<div class="addTask">
     <form action="">
-        <label for="task">Enter Your Task: </label>
-
-    <input type="text" id="task" name="task">
-
-        </form>
-
+    <input type="text" id="task" name="task" placeholder="Add your new task">
+ </form>
         <button id="add"
         onclick="
         add();
         "
-        >Add Task</button>
-
+        ><i class="fa-solid fa-plus"></i></button>
+    </div>
+<div class="list">
         <ul id="tasks"></ul>
-    
+    </div>
+    <div class="clearer">
 <button id="clear" style="display: none;">Clear Completed Tasks</button>
+</div>
 
     <script src="script.js"></script>
 </body>

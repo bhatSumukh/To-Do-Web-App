@@ -2,6 +2,16 @@
 const clearBtn = document.querySelector('#clear');
 
 
+let taskInput = document.querySelector('#task');
+
+taskInput.addEventListener('keypress', function(event) {
+  if (event.key === 'Enter') {
+    event.preventDefault(); // 
+    add();
+  }
+});
+
+
 function add() {
     let txt = document.querySelector('#task').value;
 
@@ -10,16 +20,20 @@ function add() {
        let tasks = document.querySelector('#tasks');
 
         let li =document.createElement("li");
+        li.classList.add("u-list");
         
         let checkTask = document.createElement("input");
         checkTask.type = "checkbox";
+        checkTask.classList.add("checks");
 
         let task = document.createElement("span");
         task.textContent = txt;
+        task.classList.add("list-inside")
 
         let dltButton = document.createElement("button");
+        dltButton.classList.add("dlt");
     
-        dltButton.innerText = "Delete";
+        dltButton.innerHTML = '<i class="fa-solid fa-xmark"></i>';
 
         li.appendChild(checkTask);
         li.appendChild(task);
