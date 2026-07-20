@@ -1,135 +1,215 @@
+/* Google Font */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 
-body {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  min-height: 100vh;
-  background: #fff;
-  font-family: 'Poppins', sans-serif;
-  margin: 0;
-  padding-top: 50px;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Poppins",sans-serif;
 }
 
-
-.to-do-container {
-  width: 370px;
-  text-align: center;
-  height: 600px;
-  border: 3px solid black;
-  border-radius: 5%;
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#4f46e5,#7c3aed,#9333ea);
+    padding:20px;
 }
 
-
-h1 {
-  font-size: 28px;
-  font-weight: 700;
-  margin-bottom: 20px;
+.to-do-container{
+    width:100%;
+    max-width:480px;
+    background:rgba(255,255,255,0.12);
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+    border:1px solid rgba(255,255,255,.2);
+    border-radius:22px;
+    padding:30px;
+    box-shadow:0 15px 40px rgba(0,0,0,.25);
 }
 
-
-.addTask {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  margin-bottom: 20px;
+.to-do-container h1{
+    text-align:center;
+    color:#fff;
+    margin-bottom:25px;
+    font-size:2rem;
+    font-weight:700;
 }
 
-.addTask input {
-  flex: 1;
-  padding: 8px 10px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  outline: none;
-  transition: 0.2s;
+/* Input Area */
+
+.addTask{
+    display:flex;
+    gap:12px;
+    margin-bottom:25px;
 }
 
-.addTask input:focus {
-  border-color: #007bff;
-  box-shadow: 0 0 4px rgba(0, 123, 255, 0.3);
+.addTask form{
+    flex:1;
 }
 
-.addTask button {
-  width: 38px;
-  height: 38px;
-  font-size: 18px;
-  border: none;
-  background: black;
-  color: white;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: 0.2s;
+.addTask input{
+    width:100%;
+    padding:14px 18px;
+    border:none;
+    outline:none;
+    border-radius:12px;
+    background:#fff;
+    font-size:1rem;
 }
 
-.addTask button:hover {
-  background: #333;
-  transform: scale(1.05);
+.addTask input::placeholder{
+    color:#777;
 }
 
-.list ul {
-  list-style: none;
-  padding: 0 5% 0 5%;
-  margin: 0;
+#add{
+    width:55px;
+    border:none;
+    border-radius:12px;
+    background:#10b981;
+    color:white;
+    font-size:1.1rem;
+    cursor:pointer;
+    transition:.3s;
 }
 
-.list ul li {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: #f9f9f9;
-  padding: 8px 10px;
-  border-radius: 6px;
-  margin-bottom: 10px;
-  transition: 0.2s;
+#add:hover{
+    background:#059669;
+    transform:scale(1.08);
 }
 
-.list ul li:hover {
-  background: #f1f1f1;
+/* Task List */
+
+.list ul{
+    list-style:none;
+    display:flex;
+    flex-direction:column;
+    gap:12px;
 }
 
-.list ul li input[type="checkbox"] {
-  margin-right: 10px;
+.list li{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:white;
+    padding:14px 16px;
+    border-radius:12px;
+    box-shadow:0 6px 15px rgba(0,0,0,.08);
+    animation:fade .3s ease;
 }
 
-.list ul li span {
-  flex: 1;
-  text-align: left;
-  word-break: break-word;
+.list li span{
+    flex:1;
+    color:#333;
+    font-size:1rem;
 }
 
-.list ul li button {
-  background: transparent;
-  border: none;
-  color: #000;
-  font-size: 18px;
-  cursor: pointer;
-  transition: 0.2s;
+.list li.completed span{
+    text-decoration:line-through;
+    color:#888;
 }
 
-.list ul li button:hover {
-  color: #ff3b3b;
+/* Buttons inside task */
+
+.task-buttons{
+    display:flex;
+    gap:8px;
 }
 
-
-.clearer {
-  margin-top: 15px;
+.task-buttons button{
+    border:none;
+    width:36px;
+    height:36px;
+    border-radius:8px;
+    cursor:pointer;
+    transition:.3s;
+    color:white;
 }
 
-#clear {
-  background: black;
-  color: white;
-  border: none;
-  border-radius: 20px;
-  padding: 8px 16px;
-  cursor: pointer;
-  transition: 0.3s;
+.complete-btn{
+    background:#22c55e;
 }
 
-#clear:hover {
-  background: #333;
-  transform: scale(1.05);
+.complete-btn:hover{
+    background:#16a34a;
 }
 
-input[type="checkbox"] {
-  accent-color: black;   
+.delete-btn{
+    background:#ef4444;
+}
+
+.delete-btn:hover{
+    background:#dc2626;
+}
+
+/* Clear Button */
+
+.clearer{
+    margin-top:20px;
+}
+
+#clear{
+    width:100%;
+    padding:13px;
+    border:none;
+    border-radius:12px;
+    background:#ef4444;
+    color:white;
+    font-size:1rem;
+    cursor:pointer;
+    transition:.3s;
+}
+
+#clear:hover{
+    background:#dc2626;
+}
+
+/* Quote */
+
+.quote{
+    margin-top:28px;
+    text-align:center;
+}
+
+.quote p{
+    color:rgba(255,255,255,.9);
+    font-size:.9rem;
+    line-height:1.6;
+    font-style:italic;
+}
+
+/* Animation */
+
+@keyframes fade{
+    from{
+        opacity:0;
+        transform:translateY(15px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* Responsive */
+
+@media(max-width:500px){
+
+    .to-do-container{
+        padding:22px;
+    }
+
+    .to-do-container h1{
+        font-size:1.7rem;
+    }
+
+    .addTask{
+        gap:8px;
+    }
+
+    #add{
+        width:48px;
+    }
+
 }
